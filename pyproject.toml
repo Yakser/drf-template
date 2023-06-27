@@ -5,7 +5,6 @@ description = "Python service"
 authors = []
 license = "MIT"
 readme = "README.md"
-packages = [{include = "drf_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
