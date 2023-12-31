@@ -2,18 +2,18 @@
 name = "drf-template"
 version = "0.1.0"
 description = "Python service"
-authors = []
-license = "MIT"
+authors = ["Yakser <iaksanov2044@mail.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-django = "^4.2.2"
+python = "^3.12"
+django = "^5.0"
 djangorestframework = "^3.14.0"
-drf-yasg = "^1.21.6"
+drf-yasg = "^1.21.7"
 python-decouple = "^3.8"
-django-cors-headers = "^4.1.0"
-pre-commit = "^3.3.3"
+django-cors-headers = "^4.3.1"
+pre-commit = "^3.6.0"
+djangorestframework-simplejwt = "^5.3.1"
 
 
 [build-system]
