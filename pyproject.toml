@@ -14,6 +14,8 @@ python-decouple = "^3.8"
 django-cors-headers = "^4.3.1"
 pre-commit = "^3.6.0"
 djangorestframework-simplejwt = "^5.3.1"
+django-stubs = {extras = ["compatible-mypy"], version = "^4.2.7"}
+djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.14.5"}
 
 
 [build-system]
