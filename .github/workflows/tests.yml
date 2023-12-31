@@ -47,3 +47,7 @@ jobs:
         run: poetry run python manage.py test
         env:
           DEBUG: True
+      - name: Run mypy
+        run: poetry run mypy .
+        env:
+          DEBUG: True

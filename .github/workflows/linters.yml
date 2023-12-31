@@ -27,7 +27,3 @@ jobs:
     - name: Analysing the code with flake8
       run: |
         flake8 $(git ls-files '*.py')
-
-    - name: Analysing the code with mypy
-      run: |
-        mypy .
