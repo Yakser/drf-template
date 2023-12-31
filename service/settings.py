@@ -4,7 +4,9 @@ from decouple import config  # type: ignore
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY: str = config("DJANGO_SECRET_KEY", default="django-default-secret-key", cast=str)
+SECRET_KEY: str = config(
+    "DJANGO_SECRET_KEY", default="django-default-secret-key", cast=str
+)
 
 DEBUG: bool = config("DEBUG", default=False, cast=bool)
 

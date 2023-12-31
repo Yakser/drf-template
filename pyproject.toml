@@ -18,6 +18,10 @@ django-stubs = {extras = ["compatible-mypy"], version = "^4.2.7"}
 djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.14.5"}
 
 
+[tool.poetry.group.dev.dependencies]
+django-stubs = {extras = ["compatible-mypy"], version = "^4.2.7"}
+djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.14.5"}
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
