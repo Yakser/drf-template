@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.12
 
-      - name: cache poetry install
+      - name: cache poetry install --no-root
         uses: actions/cache@v2
         with:
           path: ~/.local

@@ -13,7 +13,7 @@ Template of a Python service that uses Django-REST framework with poetry. Build,
 ### Install dependencies
 
 * 🐍 Install poetry with command `pip install poetry`
-* 📎 Install dependencies with command `poetry install`
+* 📎 Install dependencies with command `poetry install --no-root`
 
 ### Install pre-commit hooks
 

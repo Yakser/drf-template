@@ -1,26 +1,29 @@
 [tool.poetry]
 name = "drf-template"
-version = "0.1.0"
-description = "Python service"
-authors = ["Yakser <iaksanov2044@mail.ru>"]
+version = "1.0.0"
+description = "Template for python backend service"
+authors = ["Sergey Yaksanov <iaksanov2044@mail.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-django = "^5.0"
-djangorestframework = "^3.14.0"
+djangorestframework = "^3.15.2"
 drf-yasg = "^1.21.7"
 python-decouple = "^3.8"
-django-cors-headers = "^4.3.1"
-pre-commit = "^3.6.0"
+django-cors-headers = "^4.4.0"
+pre-commit = "^3.8.0"
 djangorestframework-simplejwt = "^5.3.1"
-django-stubs = {extras = ["compatible-mypy"], version = "^4.2.7"}
-djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.14.5"}
+django-stubs = "^5.0.4"
+djangorestframework-stubs = "^3.15.1"
+celery = "^5.4.0"
+django-celery-results = "^2.5.1"
+django-celery-beat = "^2.7.0"
+django-redis = "^5.4.0"
+gunicorn = "^23.0.0"
+psycopg2 = "^2.9.9"
+psycopg2-binary = "^2.9.9"
+setuptools = "^74.1.2"
 
-
-[tool.poetry.group.dev.dependencies]
-django-stubs = {extras = ["compatible-mypy"], version = "^4.2.7"}
-djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.14.5"}
 
 [build-system]
 requires = ["poetry-core"]

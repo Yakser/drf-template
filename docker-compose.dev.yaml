@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  backend:
+    image: ghcr.io/mp-bad/backend:dev
+    command: ["bash", "./scripts/startup.dev.sh"]
+    volumes:
+      - ./:/service
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data/
+
+  nginx:
+    image: nginx:stable-alpine3.17-slim
+    depends_on:
+      - backend
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "8000:80"
+
+  redis:
+    image: redis:7
+
+  celery:
+    image: ghcr.io/mp-bad/backend:dev
+    command: poetry run celery -A service worker -l INFO
+    volumes:
+      - .:/service
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+      - backend
+
+  celery-beat:
+    image: ghcr.io/mp-bad/backend:dev
+    command: poetry run celery -A service beat
+    volumes:
+      - .:/service
+    env_file:
+      - .env
+    depends_on:
+      - celery
+
+volumes:
+  postgresdata:
+    driver: local
